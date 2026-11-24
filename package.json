@@ -1,0 +1,8 @@
+{
+  "name": "3dway-store",
+  "version": "2.0.0",
+  "description": "3Dway - 3D printing templates and printer parts",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "dependencies": { "dotenv": "^16.4.5", "express": "^4.19.2", "nodemailer": "^6.9.14", "stripe": "^16.2.0" }
+}

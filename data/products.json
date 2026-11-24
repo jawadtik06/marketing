@@ -1,0 +1,185 @@
+{
+  "settings": {
+    "currency": "$",
+    "shippingFee": 6.5,
+    "freeShippingOver": 60,
+    "promoCode": "WAY10",
+    "promoPercent": 10
+  },
+  "categories": [
+    "3D Templates",
+    "Printer Parts"
+  ],
+  "products": [
+    {
+      "id": "t1",
+      "name": "Articulated Dragon STL",
+      "category": "3D Templates",
+      "type": "digital",
+      "price": 9.9,
+      "oldPrice": 14.9,
+      "badge": "Best seller",
+      "shape": "cube",
+      "color": "#00A5B8",
+      "image": "",
+      "desc": "Print-in-place flexible dragon. No supports, tested on 0.4 mm nozzle at 0.2 mm layers. Includes 3 sizes.",
+      "reviews": [
+        {
+          "name": "Karim B.",
+          "rating": 5,
+          "text": "Printed perfectly on my Ender 3 on the first try.",
+          "date": "2026-10-18"
+        },
+        {
+          "name": "Sara L.",
+          "rating": 5,
+          "text": "Joints move smoothly. My kids love it.",
+          "date": "2026-09-30"
+        }
+      ],
+      "file": "dragon.zip"
+    },
+    {
+      "id": "t2",
+      "name": "Modular Desk Organizer Pack",
+      "category": "3D Templates",
+      "type": "digital",
+      "price": 12.5,
+      "oldPrice": null,
+      "badge": "",
+      "shape": "cube",
+      "color": "#4A6FA5",
+      "image": "",
+      "desc": "12 stackable trays and holders in STL and 3MF. Designed to fit a 220 x 220 mm bed.",
+      "reviews": [
+        {
+          "name": "Youssef A.",
+          "rating": 4,
+          "text": "Clean models, easy to scale. Wish there were more drawer sizes.",
+          "date": "2026-10-02"
+        }
+      ],
+      "file": "desk-organizer.zip"
+    },
+    {
+      "id": "t3",
+      "name": "Spiral Vase Collection",
+      "category": "3D Templates",
+      "type": "digital",
+      "price": 7.5,
+      "oldPrice": 10,
+      "badge": "Sale",
+      "shape": "vase",
+      "color": "#E8743B",
+      "image": "",
+      "desc": "8 vase-mode designs that print in under 3 hours each. Slicer profiles for Cura and PrusaSlicer included.",
+      "reviews": [
+        {
+          "name": "Nadia M.",
+          "rating": 5,
+          "text": "Beautiful results in silk PLA.",
+          "date": "2026-11-05"
+        }
+      ],
+      "file": "spiral-vases.zip"
+    },
+    {
+      "id": "t4",
+      "name": "Chess Set Template",
+      "category": "3D Templates",
+      "type": "digital",
+      "price": 14.9,
+      "oldPrice": null,
+      "badge": "New",
+      "shape": "vase",
+      "color": "#2F3E52",
+      "image": "",
+      "desc": "Full 32-piece set with board, optimized for two-color printing. Commercial license available on request.",
+      "reviews": [],
+      "file": "chess-set.zip"
+    },
+    {
+      "id": "p1",
+      "name": "Brass Nozzle Set (0.2-0.8 mm)",
+      "category": "Printer Parts",
+      "type": "physical",
+      "price": 11.9,
+      "oldPrice": 15.9,
+      "badge": "Sale",
+      "shape": "nozzle",
+      "color": "#C9962B",
+      "image": "",
+      "desc": "Set of 10 MK8-compatible brass nozzles with cleaning needles and storage case.",
+      "reviews": [
+        {
+          "name": "Omar R.",
+          "rating": 5,
+          "text": "Fits my Creality perfectly. Great value.",
+          "date": "2026-10-21"
+        },
+        {
+          "name": "Hind T.",
+          "rating": 4,
+          "text": "Good quality, fast delivery.",
+          "date": "2026-10-08"
+        }
+      ]
+    },
+    {
+      "id": "p2",
+      "name": "Direct Drive Extruder Kit",
+      "category": "Printer Parts",
+      "type": "physical",
+      "price": 29.9,
+      "oldPrice": null,
+      "badge": "Best seller",
+      "shape": "gear",
+      "color": "#00A5B8",
+      "image": "",
+      "desc": "All-metal dual-gear extruder for 1.75 mm filament. Reliable with PLA, PETG and TPU.",
+      "reviews": [
+        {
+          "name": "Anas K.",
+          "rating": 5,
+          "text": "TPU prints finally work. Easy to install.",
+          "date": "2026-11-11"
+        }
+      ]
+    },
+    {
+      "id": "p3",
+      "name": "Flexible Magnetic Build Plate",
+      "category": "Printer Parts",
+      "type": "physical",
+      "price": 24.5,
+      "oldPrice": 32,
+      "badge": "Sale",
+      "shape": "plate",
+      "color": "#2F3E52",
+      "image": "",
+      "desc": "235 x 235 mm PEI spring-steel sheet with magnetic base. Parts pop off when cooled.",
+      "reviews": [
+        {
+          "name": "Salma E.",
+          "rating": 4,
+          "text": "Great first-layer adhesion.",
+          "date": "2026-09-14"
+        }
+      ]
+    },
+    {
+      "id": "p4",
+      "name": "Silent Stepper Driver (TMC2209)",
+      "category": "Printer Parts",
+      "type": "physical",
+      "price": 8.9,
+      "oldPrice": null,
+      "badge": "",
+      "shape": "gear",
+      "color": "#4A6FA5",
+      "image": "",
+      "desc": "Quiet, stall-guard capable driver module. Pack of 2 with heatsinks.",
+      "reviews": []
+    }
+  ]
+}

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3Dway | 3D printing templates and printer parts</title>
+<meta name="description" content="Ready-to-print 3D templates and reliable 3D printer parts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#12263A;--paper:#F5F7F8;--card:#fff;--line:#D9E0E5;--fil:#00A5B8;--hot:#E8743B;--mute:#5B6B79;--r:10px}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.55 'DM Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink)}
+h1,h2,h3,.logo{font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}button,input,select,textarea{font:inherit}
+:focus-visible{outline:3px solid var(--fil);outline-offset:2px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.promo{background:var(--hot);color:#fff;text-align:center;padding:8px 12px;font-weight:500;font-size:.95rem}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:20}
+.bar{display:flex;align-items:center;gap:18px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px;font-size:1.5rem;font-weight:700;text-decoration:none}
+.logo .box{border:3px solid var(--ink);border-radius:6px;padding:2px 8px;background:var(--fil);color:#fff;box-shadow:4px 4px 0 var(--ink)}
+nav{margin-left:auto;display:flex;gap:18px;align-items:center}
+nav a{text-decoration:none;font-weight:500}
+.cartbtn{background:var(--ink);color:#fff;border:0;border-radius:var(--r);padding:9px 14px;cursor:pointer;font-weight:700}
+.cartbtn span{background:var(--hot);border-radius:20px;padding:0 8px;margin-left:6px}
+.hero{background:var(--ink);color:#fff;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding-top:56px;padding-bottom:56px}
+.hero h1{font-size:clamp(2.2rem,5vw,3.8rem);margin-bottom:16px}
+.hero p{color:#C5D3DE;max-width:46ch;margin:0 0 24px}
+.btn{display:inline-block;background:var(--fil);color:#fff;border:0;border-radius:var(--r);padding:12px 22px;font-weight:700;text-decoration:none;cursor:pointer}
+.btn.alt{background:transparent;border:2px solid #fff;margin-left:8px}
+.btn.dark{background:var(--ink)}
+.print{width:100%;max-width:340px;margin:auto;display:block}
+.layer{animation:grow .5s ease-out both}
+@keyframes grow{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:none}}
+.trust{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:22px 0;font-weight:500;font-size:.95rem}
+.trust div{border-left:4px solid var(--fil);padding-left:10px}
+.trust small{display:block;color:var(--mute);font-weight:400}
+section{padding:40px 0}
+.head{display:flex;flex-wrap:wrap;gap:14px;align-items:end;justify-content:space-between;margin-bottom:22px}
+.head h2{font-size:2rem}
+.tools{display:flex;gap:10px;flex-wrap:wrap}
+.chip{border:2px solid var(--line);background:#fff;border-radius:30px;padding:7px 16px;cursor:pointer;font-weight:500}
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:#fff}
+input,select,textarea{border:2px solid var(--line);border-radius:var(--r);padding:9px 12px;background:#fff;width:100%}
+.tools input,.tools select{width:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.thumb{aspect-ratio:4/3;display:grid;place-items:center;position:relative;cursor:pointer;border:0;width:100%;padding:0}
+.thumb svg,.thumb img{width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;top:10px;left:10px;background:var(--hot);color:#fff;border-radius:6px;padding:2px 9px;font-size:.8rem;font-weight:700}
+.info{padding:14px;display:flex;flex-direction:column;gap:6px;flex:1}
+.info h3{font-size:1.1rem}
+.cat{color:var(--mute);font-size:.85rem}
+.stars{color:#E0A100;letter-spacing:1px}.stars i{font-style:normal;color:var(--mute);font-size:.85rem;letter-spacing:0;margin-left:4px}
+.price{font-weight:700;font-size:1.2rem;margin-top:auto}.price s{color:var(--mute);font-weight:400;font-size:.9rem;margin-left:6px}
+.card .btn{width:100%;text-align:center}
+.banner{background:var(--fil);color:#fff;border-radius:var(--r);padding:28px;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.banner h2{font-size:1.7rem}.banner code{background:#fff;color:var(--ink);padding:2px 8px;border-radius:6px;font-weight:700}
+.reviews{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.rev{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.rev p{margin:6px 0}.rev small{color:var(--mute)}
+.news{background:var(--ink);color:#fff;border-radius:var(--r);padding:32px}
+.news form{display:flex;gap:10px;margin-top:14px;max-width:520px}.news .msg{margin-top:10px;min-height:1.4em}
+footer{border-top:1px solid var(--line);background:#fff;padding:28px 0;color:var(--mute);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between}
+dialog{border:0;border-radius:14px;padding:0;max-width:640px;width:calc(100% - 28px);max-height:92vh;box-shadow:0 20px 60px rgba(18,38,58,.4)}
+dialog::backdrop{background:rgba(18,38,58,.6)}
+.dlg{padding:24px;overflow:auto;max-height:92vh}
+.x{float:right;background:none;border:0;font-size:1.6rem;cursor:pointer;line-height:1}
+.line{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.line b{flex:1}.line button{border:1px solid var(--line);background:#fff;border-radius:6px;width:28px;height:28px;cursor:pointer}
+.sum{display:grid;grid-template-columns:1fr auto;gap:4px 12px;margin:14px 0}.sum .t{font-weight:700;font-size:1.2rem}
+.f{display:grid;gap:10px;margin-top:10px}
+.pay{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.pay label{border:2px solid var(--line);border-radius:var(--r);padding:10px;text-align:center;cursor:pointer;font-weight:500}
+.pay input{display:none}.pay label:has(input:checked){border-color:var(--fil);background:#E6F7F9}
+.note{font-size:.85rem;color:var(--mute)}
+.err{color:#B3261E;min-height:1.4em}
+.ok{color:#0B7A4B}
+@media(max-width:800px){.hero .wrap{grid-template-columns:1fr}.trust{grid-template-columns:1fr 1fr}nav a{display:none}.news form{flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.layer{animation:none}}
+</style>
+</head>
+<body>
+<div class="promo" id="promo"></div>
+<header><div class="wrap bar">
+  <a class="logo" href="#top" aria-label="3Dway home"><span class="box">3D</span>way</a>
+  <nav><a href="#shop">Shop</a><a href="#reviews">Reviews</a><a href="#news">Newsletter</a>
+  <button class="cartbtn" id="openCart" aria-label="Open cart">Cart<span id="count">0</span></button></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>Print it. Fix it. Make it yours.</h1>
+    <p>Tested 3D templates ready for your slicer, and printer parts that keep your machine running. Digital files arrive by email right after payment.</p>
+    <a class="btn" href="#shop">Shop the catalog</a><a class="btn alt" href="#reviews">Read reviews</a>
+  </div>
+  <svg class="print" viewBox="0 0 300 300" role="img" aria-label="A cube being printed layer by layer" id="cube"></svg>
+</div></div>
+
+<div class="wrap trust">
+  <div>Secure payment<small>Card, PayPal or cash on delivery</small></div>
+  <div>Instant download<small>Digital files after checkout</small></div>
+  <div>Free shipping<small id="freeShip">On parts over a set amount</small></div>
+  <div>Tested designs<small>Every file printed first</small></div>
+</div>
+
+<section id="shop"><div class="wrap">
+  <div class="head"><h2>Product catalog</h2>
+    <div class="tools">
+      <div id="cats" role="group" aria-label="Categories"></div>
+      <input type="search" id="q" placeholder="Search products" aria-label="Search products">
+      <select id="sort" aria-label="Sort"><option value="">Sort: Featured</option><option value="lo">Price: low to high</option><option value="hi">Price: high to low</option><option value="rate">Top rated</option></select>
+    </div></div>
+  <div class="grid" id="grid"></div>
+  <p id="empty" class="note" hidden>No products match your search. Try another word or category.</p>
+</div></section>
+
+<section><div class="wrap"><div class="banner">
+  <div><h2 id="bannerT"></h2><p style="margin:6px 0 0">Enter the code at checkout.</p></div>
+  <a class="btn dark" href="#shop">Start shopping</a>
+</div></div></section>
+
+<section id="reviews"><div class="wrap">
+  <div class="head"><h2>What customers say</h2></div>
+  <div class="reviews" id="revs"></div>
+</div></section>
+
+<section id="news"><div class="wrap"><div class="news">
+  <h2>New files and deals, first</h2>
+  <p style="margin:6px 0 0;color:#C5D3DE">One email when new templates or parts arrive. Unsubscribe any time.</p>
+  <form id="nf"><input type="email" id="ne" placeholder="you@example.com" aria-label="Email address" required><button class="btn">Subscribe</button></form>
+  <div class="msg" id="nm" role="status"></div>
+</div></div></section>
+</main>
+
+<footer><div class="wrap"><span>&copy; 2026 3Dway. All rights reserved.</span><span>Payments are processed securely. We never store card numbers.</span></div></footer>
+
+<dialog id="pd"><div class="dlg" id="pdBody"></div></dialog>
+<dialog id="cd"><div class="dlg" id="cdBody"></div></dialog>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let DB={products:[],settings:{},categories:[]},cat='All',cart=[];
+try{cart=JSON.parse(localStorage.getItem('w3d-cart')||'[]')}catch{}
+let promoOn=false;
+const money=n=>DB.settings.currency+n.toFixed(2);
+const avg=p=>p.reviews.length?p.reviews.reduce((a,r)=>a+r.rating,0)/p.reviews.length:0;
+const stars=n=>'★'.repeat(Math.round(n))+'☆'.repeat(5-Math.round(n));
+
+// Hero: cube printed layer by layer
+$('#cube').innerHTML=Array.from({length:9},(_,i)=>{const y=230-i*18;
+ return `<g class="layer" style="animation-delay:${i*.25}s"><path d="M150 ${y-40} L230 ${y} L150 ${y+40} L70 ${y}Z" fill="${i%2?'#00A5B8':'#13B9CC'}"/><path d="M70 ${y} L150 ${y+40} L150 ${y+58} L70 ${y+18}Z" fill="#0A7E8C"/><path d="M230 ${y} L150 ${y+40} L150 ${y+58} L230 ${y+18}Z" fill="#096A76"/></g>`}).reverse().join('');
+
+// Product images: use p.image when set, otherwise a generated illustration
+function art(p){
+ if(p.image) return `<img src="${esc(p.image)}" alt="${esc(p.name)}" loading="lazy">`;
+ const c=p.color,s={
+  cube:`<path d="M100 60l60 30v70l-60 30-60-30V90z" fill="#fff" fill-opacity=".9"/><path d="M100 60l60 30-60 30-60-30z" fill="#fff"/><path d="M100 120v70M40 90l60 30 60-30" stroke="${c}" stroke-width="3" fill="none"/>`,
+  vase:`<path d="M80 50h40c0 25 30 40 30 80 0 30-20 50-50 50s-50-20-50-50c0-40 30-55 30-80z" fill="#fff"/><path d="M62 110h76M58 135h84M64 160h72" stroke="${c}" stroke-width="3"/>`,
+  nozzle:`<path d="M75 45h50v45H75z" fill="#fff"/><path d="M80 90h40l-14 55h-12z" fill="#fff"/><path d="M96 145h8v22h-8z" fill="#fff"/><path d="M75 62h50M75 76h50" stroke="${c}" stroke-width="3"/>`,
+  gear:`<circle cx="100" cy="100" r="48" fill="#fff"/><g fill="#fff">${Array.from({length:8},(_,i)=>`<rect x="88" y="38" width="24" height="26" transform="rotate(${i*45} 100 100)"/>`).join('')}</g><circle cx="100" cy="100" r="18" fill="${c}"/>`,
+  plate:`<path d="M30 95l70-30 70 30-70 30z" fill="#fff"/><path d="M30 95v14l70 30 70-30V95l-70 30z" fill="#fff" fill-opacity=".7"/><path d="M60 95l40-17 40 17-40 17z" stroke="${c}" stroke-width="3" fill="none"/>`};
+ return `<svg viewBox="0 0 200 200" role="img" aria-label="${esc(p.name)}"><rect width="200" height="200" fill="${c}"/><g>${s[p.shape]||s.cube}</g></svg>`;
+}
+
+function card(p){const a=avg(p);
+ return `<article class="card"><button class="thumb" data-view="${p.id}" aria-label="View ${esc(p.name)}">${art(p)}${p.badge?`<span class="tag">${esc(p.badge)}</span>`:''}</button>
+ <div class="info"><span class="cat">${esc(p.category)} · ${p.type==='digital'?'Digital file':'Ships to you'}</span><h3>${esc(p.name)}</h3>
+ <div class="stars" aria-label="${a.toFixed(1)} out of 5">${stars(a)}<i>${p.reviews.length?`(${p.reviews.length})`:'No reviews yet'}</i></div>
+ <div class="price">${money(p.price)}${p.oldPrice?`<s>${money(p.oldPrice)}</s>`:''}</div>
+ <button class="btn" data-add="${p.id}">Add to cart</button></div></article>`}
+
+function render(){
+ const q=$('#q').value.toLowerCase(),s=$('#sort').value;
+ let list=DB.products.filter(p=>(cat==='All'||p.category===cat)&&(p.name+p.desc).toLowerCase().includes(q));
+ if(s==='lo')list.sort((a,b)=>a.price-b.price);if(s==='hi')list.sort((a,b)=>b.price-a.price);if(s==='rate')list.sort((a,b)=>avg(b)-avg(a));
+ $('#grid').innerHTML=list.map(card).join('');$('#empty').hidden=list.length>0;
+ $('#revs').innerHTML=DB.products.flatMap(p=>p.reviews.map(r=>({...r,p:p.name}))).sort((a,b)=>b.date.localeCompare(a.date)).slice(0,6)
+  .map(r=>`<div class="rev"><div class="stars">${stars(r.rating)}</div><p>${esc(r.text)}</p><small>${esc(r.name)} on ${esc(r.p)}</small></div>`).join('')||'<p class="note">No reviews yet.</p>';
+}
+function chips(){$('#cats').innerHTML=['All',...DB.categories].map(c=>`<button class="chip" aria-pressed="${c===cat}" data-cat="${esc(c)}">${esc(c)}</button>`).join(' ')}
+
+// Cart
+const save=()=>{localStorage.setItem('w3d-cart',JSON.stringify(cart));$('#count').textContent=cart.reduce((a,i)=>a+i.qty,0)};
+function add(id){const i=cart.find(x=>x.id===id);i?i.qty++:cart.push({id,qty:1});save();openCart()}
+function totals(){const S=DB.settings;let sub=0,phys=false;
+ cart.forEach(i=>{const p=DB.products.find(x=>x.id===i.id);if(p){sub+=p.price*i.qty;if(p.type==='physical')phys=true}});
+ const disc=promoOn?sub*S.promoPercent/100:0,after=sub-disc,ship=phys&&sub<S.freeShippingOver?S.shippingFee:0;
+ return{sub,disc,ship,phys,total:after+ship}}
+function openCart(step='cart'){
+ cart=cart.filter(i=>DB.products.find(p=>p.id===i.id));save();
+ const d=$('#cdBody');
+ if(!cart.length){d.innerHTML=`<button class="x" data-close aria-label="Close">&times;</button><h2>Your cart</h2><p>Your cart is empty. Browse the catalog to add a template or part.</p><a class="btn" href="#shop" data-close>Shop now</a>`;$('#cd').showModal();return}
+ const t=totals();
+ const lines=cart.map(i=>{const p=DB.products.find(x=>x.id===i.id);return `<div class="line"><b>${esc(p.name)}</b><button data-q="${p.id}" data-d="-1" aria-label="Remove one">−</button>${i.qty}<button data-q="${p.id}" data-d="1" aria-label="Add one">+</button><span>${money(p.price*i.qty)}</span></div>`}).join('');
+ const sum=`<div class="sum"><span>Subtotal</span><span>${money(t.sub)}</span>${t.disc?`<span>Discount (${DB.settings.promoCode})</span><span>−${money(t.disc)}</span>`:''}<span>Shipping</span><span>${t.phys?(t.ship?money(t.ship):'Free'):'Not needed'}</span><span class="t">Total</span><span class="t">${money(t.total)}</span></div>`;
+ if(step==='cart'){d.innerHTML=`<button class="x" data-close aria-label="Close">&times;</button><h2>Your cart</h2>${lines}
+  <div class="f"><label>Promo code<input id="pc" placeholder="${esc(DB.settings.promoCode)}" value="${promoOn?esc(DB.settings.promoCode):''}"></label><div class="err" id="pe"></div></div>${sum}<button class="btn" id="goPay">Checkout</button>`;}
+ else{d.innerHTML=`<button class="x" data-close aria-label="Close">&times;</button><h2>Checkout</h2>${sum}
+  <form class="f" id="cf"><input name="name" placeholder="Full name" autocomplete="name" required><input name="email" type="email" placeholder="Email (files are sent here)" autocomplete="email" required>
+  ${t.phys?'<textarea name="address" rows="2" placeholder="Delivery address" autocomplete="street-address" required></textarea>':''}
+  <div class="pay" role="radiogroup" aria-label="Payment method"><label><input type="radio" name="payment" value="card" checked>Card</label><label><input type="radio" name="payment" value="paypal">PayPal</label>${t.phys?'<label><input type="radio" name="payment" value="cod">Cash on delivery</label>':''}</div>
+  <p class="note">Card and PayPal details are entered on the payment provider's secure page, never on this server. Connect Stripe or PayPal in server.js to go live.</p>
+  <div class="err" id="ce" role="alert"></div><button class="btn">Place order · ${money(t.total)}</button></form>`;}
+ if(!$('#cd').open)$('#cd').showModal();
+}
+
+// Product detail + review form
+function view(id){const p=DB.products.find(x=>x.id===id),a=avg(p);
+ $('#pdBody').innerHTML=`<button class="x" data-close aria-label="Close">&times;</button><div style="border-radius:10px;overflow:hidden;aspect-ratio:16/9">${art(p)}</div>
+ <h2 style="margin-top:14px">${esc(p.name)}</h2><div class="stars">${stars(a)} <i style="font-size:.85rem">${p.reviews.length} review${p.reviews.length===1?'':'s'}</i></div>
+ <p>${esc(p.desc)}</p><div class="price">${money(p.price)}${p.oldPrice?`<s>${money(p.oldPrice)}</s>`:''}</div><button class="btn" data-add="${p.id}" style="margin-top:10px">Add to cart</button>
+ <h3 style="margin:22px 0 8px">Reviews</h3>${p.reviews.map(r=>`<div class="line" style="display:block"><span class="stars">${stars(r.rating)}</span> <b>${esc(r.name)}</b><p style="margin:2px 0">${esc(r.text)}</p></div>`).join('')||'<p class="note">Be the first to review this product.</p>'}
+ <form class="f" data-rev="${p.id}"><h3>Write a review</h3><input name="name" placeholder="Your name" required><select name="rating" aria-label="Rating"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select><textarea name="text" rows="2" placeholder="Share your experience" required></textarea><div class="err" role="alert"></div><button class="btn">Submit review</button></form>`;
+ $('#pd').showModal()}
+
+async function post(url,body){const r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const j=await r.json();if(!r.ok)throw new Error(j.error||'Something went wrong. Try again.');return j}
+
+document.addEventListener('click',e=>{const t=e.target.closest('button,a');if(!t)return;
+ if(t.dataset.add){add(t.dataset.add);$('#pd').close()}
+ else if(t.dataset.view)view(t.dataset.view);
+ else if(t.dataset.cat){cat=t.dataset.cat;chips();render()}
+ else if(t.dataset.close!==undefined){t.closest('dialog').close()}
+ else if(t.dataset.q){const i=cart.find(x=>x.id===t.dataset.q);i.qty+=+t.dataset.d;if(i.qty<1)cart=cart.filter(x=>x!==i);save();openCart()}
+ else if(t.id==='goPay'){const c=$('#pc').value.trim().toUpperCase();
+  if(c&&c!==DB.settings.promoCode.toUpperCase()){$('#pe').textContent='That code is not valid.';return}
+  promoOn=!!c;openCart('pay')}
+ else if(t.id==='openCart')openCart()});
+document.addEventListener('submit',async e=>{e.preventDefault();const f=e.target,fd=Object.fromEntries(new FormData(f));
+ try{
+ if(f.id==='nf'){await post('/api/newsletter',{email:$('#ne').value});$('#nm').className='msg ok';$('#nm').style.color='#7FE3EF';$('#nm').textContent='You are subscribed. Watch your inbox.';f.reset()}
+ else if(f.dataset.rev){const j=await post('/api/reviews',{productId:f.dataset.rev,...fd});const i=DB.products.findIndex(p=>p.id===j.product.id);DB.products[i]=j.product;render();view(j.product.id)}
+ else if(f.id==='cf'){const j=await post('/api/orders',{items:cart,customer:{name:fd.name,email:fd.email,address:fd.address},payment:fd.payment,promo:promoOn?DB.settings.promoCode:''});
+  if(j.url){location.href=j.url;return}
+  cart=[];promoOn=false;save();$('#cdBody').innerHTML=`<button class="x" data-close aria-label="Close">&times;</button><h2>Thank you!</h2><p>Order <b>${j.orderId}</b> is confirmed. A receipt is on its way to your email.</p><button class="btn" data-close>Continue shopping</button>`}
+ }catch(err){const el=f.querySelector('.err')||$('#nm');el.textContent=err.message;if(f.id==='nf'){el.style.color='#FFB4A8'}}});
+['q','sort'].forEach(id=>$('#'+id).addEventListener('input',render));
+
+fetch('/api/products').then(r=>r.json()).then(d=>{DB=d;const S=d.settings;
+ $('#promo').textContent=`Use code ${S.promoCode} for ${S.promoPercent}% off your first order`;
+ $('#bannerT').innerHTML=`Save ${S.promoPercent}% with code <code>${esc(S.promoCode)}</code>`;
+ $('#freeShip').textContent=`On printer parts over ${S.currency}${S.freeShippingOver}`;
+ const ord=new URLSearchParams(location.search).get('order');if(ord){$('#promo').textContent='Payment received. Order '+ord+': check your email for your download links.';cart=[];}
+ chips();render();save()}).catch(()=>{$('#grid').innerHTML='<p>We could not load products. Refresh the page.</p>'});
+</script>
+</body>
+</html>

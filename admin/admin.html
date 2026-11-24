@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>3Dway admin</title>
+<style>
+body{margin:0;font:15px/1.5 system-ui,sans-serif;background:#F5F7F8;color:#12263A}
+header{background:#12263A;color:#fff;padding:14px 20px;font-weight:700;font-size:1.2rem}
+main{max-width:1100px;margin:0 auto;padding:20px;display:grid;gap:22px}
+section{background:#fff;border:1px solid #D9E0E5;border-radius:10px;padding:18px;overflow:auto}
+h2{margin:0 0 12px;font-size:1.2rem}table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:8px;border-bottom:1px solid #E6EBEF;vertical-align:top}
+button,select,input,textarea{font:inherit;padding:7px 10px;border:2px solid #D9E0E5;border-radius:8px;background:#fff}
+button{background:#00A5B8;border-color:#00A5B8;color:#fff;font-weight:700;cursor:pointer}
+button.alt{background:#fff;color:#12263A;border-color:#D9E0E5}
+.s{padding:2px 9px;border-radius:20px;font-size:.8rem;background:#E6EBEF}.s.paid,.s.shipped{background:#CFF2DD}.s.pending{background:#FFE7B8}
+form{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}form .w{grid-column:1/-1}
+.stats{display:flex;gap:30px;flex-wrap:wrap}.stats b{font-size:1.7rem;display:block}
+</style></head><body><header>3Dway admin</header><main>
+<section><div class="stats" id="stats"></div></section>
+<section><h2>Orders</h2><table><thead><tr><th>Order</th><th>Customer</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th><th>Action</th></tr></thead><tbody id="orders"></tbody></table></section>
+<section><h2>Add or update a product</h2><form id="pf">
+<input name="id" placeholder="ID (e.g. t5)" required><input name="name" placeholder="Name" required><input name="category" placeholder="Category">
+<select name="type"><option value="digital">Digital file</option><option value="physical">Physical part</option></select>
+<input name="price" type="number" step="0.01" placeholder="Price" required><input name="oldPrice" type="number" step="0.01" placeholder="Old price">
+<input name="badge" placeholder="Badge (Sale, New)"><select name="shape"><option>cube</option><option>vase</option><option>nozzle</option><option>gear</option><option>plate</option></select>
+<input name="color" placeholder="#00A5B8"><input name="image" placeholder="/images/photo.jpg"><input name="file" placeholder="Private file (digital)">
+<textarea class="w" name="desc" rows="2" placeholder="Description"></textarea><div class="w"><button>Save product</button> <span id="pm"></span></div></form></section>
+<section><h2>Subscribers (<span id="sc">0</span>)</h2><button class="alt" id="csv">Download CSV</button><p id="subs"></p></section>
+</main><script>
+const $=s=>document.querySelector(s);let D;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+async function load(){D=await (await fetch('/api/admin/data')).json();
+ const paid=D.orders.filter(o=>['paid','shipped'].includes(o.status));
+ $('#stats').innerHTML=`<div><b>${D.orders.length}</b>Orders</div><div><b>${paid.reduce((a,o)=>a+o.total,0).toFixed(2)}</b>Paid revenue</div><div><b>${D.orders.filter(o=>o.status==='pending').length}</b>Pending</div><div><b>${D.subscribers.length}</b>Subscribers</div>`;
+ $('#orders').innerHTML=D.orders.map(o=>`<tr><td>${esc(o.id)}<br><small>${o.date.slice(0,10)}</small></td><td>${esc(o.customer.name)}<br><small>${esc(o.customer.email)}<br>${esc(o.customer.address||'')}</small></td><td>${o.lines.map(l=>esc(l.name)+' x'+l.qty).join('<br>')}</td><td>${o.total.toFixed(2)}</td><td>${o.payment}</td><td><span class="s ${o.status}">${o.status}</span></td>
+ <td>${['paid','shipped','cancelled'].filter(s=>s!==o.status).map(s=>`<button class="alt" data-id="${o.id}" data-s="${s}">${s==='paid'?'Mark paid + send files':'Mark '+s}</button>`).join(' ')}</td></tr>`).join('')||'<tr><td colspan=7>No orders yet.</td></tr>';
+ $('#sc').textContent=D.subscribers.length;$('#subs').textContent=D.subscribers.join(', ')}
+document.addEventListener('click',async e=>{const b=e.target.closest('button[data-id]');if(!b)return;
+ await fetch(`/api/admin/orders/${b.dataset.id}/status`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({status:b.dataset.s})});load()});
+$('#pf').addEventListener('submit',async e=>{e.preventDefault();
+ const r=await fetch('/api/admin/products',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(e.target)))});
+ const j=await r.json();$('#pm').textContent=r.ok?'Saved.':j.error;if(r.ok)e.target.reset()});
+$('#csv').onclick=()=>{const a=document.createElement('a');a.href='data:text/csv,'+encodeURIComponent('email\n'+D.subscribers.join('\n'));a.download='subscribers.csv';a.click()};
+load();
+</script></body></html>
